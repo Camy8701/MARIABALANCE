@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Maria Balance</title>
+  <meta name="description" content="Maria Balance Pilates blog — stories, movement tips, and insights from the mat. Coming soon.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allison&family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --blush: #f4efec;
+      --peach-light: #f0e4da;
+      --peach-mid: #ddb8a8;
+      --peach-deep: #c9907c;
+      --warm-dark: #3d2218;
+      --white: #fffefa;
+    }
+    body {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background: var(--blush);
+      color: var(--warm-dark);
+    }
+    .font-script { font-family: "Allison", cursive; font-weight: 400; }
+    .font-label  { font-family: "Space Mono", monospace; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .7s cubic-bezier(.22,.68,0,1.1) forwards; }
+    .fade-up-2 { animation: fadeUp .7s cubic-bezier(.22,.68,0,1.1) .18s both; }
+    .fade-up-3 { animation: fadeUp .7s cubic-bezier(.22,.68,0,1.1) .34s both; }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .35; }
+    }
+    .dot-1 { animation: pulse-dot 1.6s ease-in-out infinite; }
+    .dot-2 { animation: pulse-dot 1.6s ease-in-out .28s infinite; }
+    .dot-3 { animation: pulse-dot 1.6s ease-in-out .56s infinite; }
+  </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="flex items-center justify-between px-6 py-5 md:px-12">
+    <a href="mariabalance-index.html" class="font-script text-3xl text-[#3d2218] hover:opacity-75 transition">Maria Balance</a>
+    <a href="mariabalance-index.html" class="font-label text-[11px] uppercase tracking-[.16em] text-[#7b4d3c] border border-[#c9907c]/60 px-5 py-2 rounded-full hover:bg-[#c9907c] hover:text-[#fffefa] hover:border-[#c9907c] transition duration-200 inline-flex items-center gap-2">
+      <i data-lucide="arrow-left" class="h-3.5 w-3.5 stroke-[1.8]"></i>
+      Back home
+    </a>
+  </nav>
+
+  <!-- Main content -->
+  <main class="flex flex-1 items-center justify-center px-6 py-20">
+    <div class="mx-auto max-w-xl text-center">
+
+      <!-- Decorative element -->
+      <div class="mx-auto mb-10 flex h-20 w-20 items-center justify-center rounded-full fade-up" style="background: linear-gradient(135deg, #f0e4da, #ddb8a8)">
+        <i data-lucide="book-open" class="h-9 w-9 stroke-[1.2] text-[#7b4d3c]"></i>
+      </div>
+
+      <p class="font-label text-xs uppercase tracking-[.24em] text-[#c9907c] fade-up">Maria Balance · Blog</p>
+
+      <h1 class="font-script mt-4 text-7xl leading-none text-[#3d2218] md:text-8xl fade-up-2">
+        Coming<br>Soon
+      </h1>
+
+      <p class="mx-auto mt-8 max-w-md text-xl leading-relaxed text-[#7b4d3c] fade-up-3">
+        Stories from the mat, movement tips, and a little inspiration for your practice — arriving soon.
+      </p>
+
+      <!-- Animated dots -->
+      <div class="mt-10 flex items-center justify-center gap-3 fade-up-3">
+        <span class="dot-1 h-2.5 w-2.5 rounded-full bg-[#c9907c]"></span>
+        <span class="dot-2 h-2.5 w-2.5 rounded-full bg-[#c9907c]"></span>
+        <span class="dot-3 h-2.5 w-2.5 rounded-full bg-[#c9907c]"></span>
+      </div>
+
+      <!-- Notify prompt -->
+      <div class="mt-14 fade-up-3">
+        <p class="font-label text-[11px] uppercase tracking-[.2em] text-[#b8aaa3] mb-5">Get notified when it launches</p>
+        <form class="flex flex-col gap-3 sm:flex-row sm:justify-center" onsubmit="return handleNotify(event)">
+          <input
+            type="email"
+            id="notify-email"
+            placeholder="your@email.com"
+            required
+            class="w-full rounded-full border border-[#ddb8a8] bg-[#fffefa] px-6 py-3 font-label text-xs tracking-[.1em] text-[#3d2218] placeholder-[#b8aaa3] outline-none focus:border-[#c9907c] transition sm:w-64">
+          <button type="submit" class="rounded-full bg-[#3d2218] px-8 py-3 font-label text-xs uppercase tracking-[.16em] text-[#fffefa] transition hover:bg-[#c9907c]">
+            Notify me
+          </button>
+        </form>
+        <p id="notify-thanks" class="mt-4 font-label text-xs uppercase tracking-[.16em] text-[#c9907c] opacity-0 transition-opacity duration-500">Thanks! We'll let you know.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#ddb8a8]/50 px-6 py-6 text-center md:px-12">
+    <p class="font-label text-[10px] uppercase tracking-[.18em] text-[#b8aaa3]">© 2026 Maria Balance · Pilates in Barcelona</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    function handleNotify(e) {
+      e.preventDefault();
+      document.getElementById('notify-email').value = '';
+      var thanks = document.getElementById('notify-thanks');
+      thanks.style.opacity = '1';
+      setTimeout(function() { thanks.style.opacity = '0'; }, 4000);
+      return false;
+    }
+  </script>
+</body>
+</html>
