@@ -45,11 +45,13 @@
       --warm-dark:   #3d2218;
     }
 
-    html, body {
+    html {
       overflow-x: hidden;
+      font-size: 19.2px; /* 16px × 1.2 — scales all rem text by 20% */
     }
 
     body {
+      overflow-x: hidden;
       font-family: "Cormorant Garamond", Georgia, serif;
       background: var(--blush);
       color: var(--espresso);
@@ -128,6 +130,7 @@
     .leaflet-popup-tip-container { display:none; }
     .leaflet-control-zoom { border:none!important; box-shadow:0 2px 10px rgba(33,24,23,.15)!important; border-radius:12px!important; overflow:hidden; }
     .leaflet-control-zoom a { color:#3d2218!important; font-weight:700; }
+    .leaflet-control-attribution { display: none !important; }
   </style>
 
   <script type="application/ld+json">
@@ -288,7 +291,7 @@
     <section id="about" class="section-overlap relative z-10 bg-[#fffefa] px-5 py-24 md:px-10 md:py-32">
       <div class="mx-auto grid max-w-screen-2xl items-center gap-16 lg:grid-cols-2 lg:gap-24">
         <div class="relative">
-          <img src="assets/maria-balance-pilates-about.jpg" alt="Maria Balance Pilates practice in a warm natural-light studio" class="aspect-[4/5] w-full rounded-3xl object-cover">
+          <img src="b0eb873ea13dfc5e0746c56d89d01be8.jpg" alt="Maria Balance Pilates practice — fluid movement on the mat" class="aspect-[3/4] w-full rounded-3xl object-cover object-top">
           <div class="absolute -bottom-8 -right-8 hidden aspect-square w-48 rounded-full bg-[#f4efec] md:block"></div>
         </div>
         <div class="flex flex-col space-y-8">
@@ -556,24 +559,6 @@
       </div>
     </section>
 
-    <section id="location" class="bg-[#f4efec] px-5 py-24 md:px-10 md:py-32">
-      <div class="mx-auto grid max-w-screen-2xl items-center gap-14 lg:grid-cols-[1fr_.9fr]">
-        <img src="assets/maria-balance-pilates-location.jpg" alt="Platja de Sant Sebastià, Barcelona — Maria Balance Pilates outdoor location" class="w-full rounded-3xl object-cover" style="aspect-ratio:4/3">
-        <div>
-          <p class="font-label text-xs uppercase tracking-[.2em] text-[#7d6f68]">Location</p>
-          <h2 class="font-script mt-4 text-5xl leading-tight text-[#3d2218] md:text-6xl">Pilates in Ciutat Vella, Barcelona.</h2>
-          <address class="mt-8 not-italic text-3xl leading-relaxed text-[#211817]">
-            Platja de Sant Sebastià (Parc esportiu)<br>
-            Ciutat Vella, 08039 Barcelona
-          </address>
-          <p class="mt-6 text-2xl leading-relaxed text-[#5f514c]">Meet outdoors near the beach for a calm, accessible Pilates practice. Bring your own mat and plenty of water.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Platja%20de%20Sant%20Sebastia%20Parc%20esportiu%20Barcelona" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-3 border border-[#211817] px-7 py-4 font-label text-xs uppercase tracking-[.16em] transition hover:bg-[#211817] hover:text-[#fffefa]">
-            Open Map <i data-lucide="external-link" class="h-4 w-4 stroke-[1.5]"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <section id="faq" class="bg-[#fffefa] px-5 py-24 md:px-10 md:py-32">
       <div class="mx-auto max-w-screen-xl">
         <div class="mb-12 max-w-3xl">
@@ -749,9 +734,16 @@
         </div>
       </div>
 
-      <!-- Interactive map below booking card -->
-      <div class="mx-auto mt-10" style="max-width:1180px">
-        <p class="mb-4 font-label text-xs uppercase tracking-[.2em] text-[#7b4d3c] text-center">Find us here</p>
+      <!-- Combined Location section with interactive map -->
+      <div id="location" class="mx-auto mt-14 scroll-mt-24" style="max-width:1180px">
+        <div class="flex flex-col items-center text-center mb-8 gap-3">
+          <p class="font-label text-xs uppercase tracking-[.2em] text-[#7b4d3c]">Location</p>
+          <h2 class="font-script text-5xl text-[#3d2218] md:text-6xl">Pilates in Ciutat Vella.</h2>
+          <address class="not-italic text-xl leading-relaxed text-[#7b4d3c]">Platja de Sant Sebastià (Parc esportiu) · Ciutat Vella, 08039 Barcelona</address>
+          <a href="https://www.google.com/maps/search/?api=1&query=Platja%20de%20Sant%20Sebastia%20Parc%20esportiu%20Barcelona" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-2 font-label text-xs uppercase tracking-[.16em] text-[#c9907c] hover:text-[#3d2218] transition border-b border-[#c9907c] pb-0.5">
+            Open in Google Maps <i data-lucide="external-link" class="h-3.5 w-3.5 stroke-[1.8]"></i>
+          </a>
+        </div>
         <div id="mb-location-map"></div>
       </div>
     </section>
